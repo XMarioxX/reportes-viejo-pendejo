@@ -1,0 +1,48 @@
+\begin{thebibliography}{6}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[{Arduino}(2024)]{arduino_tone}
+{Arduino}.
+\newblock Tone function reference.
+\newblock
+  \url{https://www.arduino.cc/reference/en/language/functions/advanced-io/tone/},
+  2024.
+\newblock Available at
+  \url{https://www.arduino.cc/reference/en/language/functions/advanced-io/tone/}.
+
+\bibitem[Banzi and Shiloh(2014)]{banzi2009getting}
+Massimo Banzi and Michael Shiloh.
+\newblock \emph{Getting Started with Arduino}.
+\newblock Maker Media, Inc, 3 edition, 2014.
+\newblock ISBN 978-1449363338.
+
+\bibitem[Evans et~al.(2013)Evans, Noble, and Hochenbaum]{evans2011arduino}
+Martin Evans, Joshua Noble, and Jordan Hochenbaum.
+\newblock \emph{Arduino in Action}.
+\newblock Manning Publications, 2013.
+\newblock ISBN 978-1617290244.
+
+\bibitem[Monk(2017)]{monk2017programming}
+Simon Monk.
+\newblock \emph{Programming Arduino: Getting Started with Sketches}.
+\newblock McGraw-Hill Education, 2 edition, 2017.
+\newblock ISBN 978-1259641633.
+
+\bibitem[Platt(2014)]{platt2014encyclopedia}
+Charles Platt.
+\newblock \emph{Encyclopedia of Electronic Components Volume 2: LEDs, LCDs,
+  Audio, Thyristors, Digital Logic, and Amplification}.
+\newblock Make Community, LLC, 2014.
+\newblock ISBN 978-1449334185.
+
+\bibitem[Scherz and Monk(2016)]{scherz2016practical}
+Paul Scherz and Simon Monk.
+\newblock \emph{Practical Electronics for Inventors}.
+\newblock McGraw-Hill Education, 4 edition, 2016.
+\newblock ISBN 978-1259587542.
+
+\end{thebibliography}

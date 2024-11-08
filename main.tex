@@ -1,10 +1,13 @@
 \documentclass[12pt]{article}
-
 % Paquetes básicos primero
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage{ragged2e}
+\usepackage{textcomp}
+\usepackage{gensymb}
+\usepackage{siunitx} 
 \usepackage[spanish]{babel}
+\usepackage{multicol}
 
 % Geometría y diseño
 \usepackage{geometry}
@@ -26,6 +29,11 @@
 \usepackage{enumitem}
 \usepackage{lastpage}
 \usepackage{background}
+\usepackage{listings}
+\usepackage{tcolorbox}
+\usepackage{fontawesome}
+\usepackage{titlesec}
+\usepackage{float}
 
 % Paquetes para referencias
 \usepackage[round]{natbib}  % Configuración específica para citas
@@ -35,14 +43,62 @@
 \usepackage{url}
 \usepackage[hidelinks]{hyperref}
 
+% Configuración de colores personalizados
+\definecolor{tecnmBlue}{RGB}{0, 43, 89}
+\definecolor{tecnmWhite}{RGB}{255, 255, 255}
+\definecolor{codeBackground}{RGB}{240,240,240}
+\definecolor{comentarios}{RGB}{63,127,95}
+\definecolor{identificador}{RGB}{127,0,85}
+\definecolor{cadena}{RGB}{42,0,255}
+\definecolor{arduinoBlue}{RGB}{0,129,132}
+
+% Configuración de listings para código Arduino
+\lstdefinestyle{arduinoStyle}{
+	language=C++,
+	backgroundcolor=\color{codeBackground},
+	basicstyle=\ttfamily\scriptsize,
+	breaklines=true,
+	captionpos=b,
+	commentstyle=\color{comentarios},
+	keywordstyle=\color{identificador},
+	stringstyle=\color{cadena},
+	numbers=left,
+	numberstyle=\tiny\color{gray},
+	stepnumber=1,
+	numbersep=5pt,
+	tabsize=3,
+	showspaces=false,
+	showstringspaces=false,
+	frame=single,
+	frameround=tttt,
+	framesep=2mm,
+	rulecolor=\color{arduinoBlue},
+	emph={pinMode,digitalWrite,HIGH,LOW,INPUT,OUTPUT,tone,noTone,delay,delayMicroseconds,millis,INPUT_PULLUP},
+	emphstyle={\color{blue}\bfseries},
+	morekeywords={setup,loop},
+	linewidth=\columnwidth,
+	xleftmargin=0.5cm,
+	xrightmargin=0.5cm,
+	float=h,
+	floatplacement=H,
+	belowskip=-0.2cm,
+	aboveskip=0.2cm
+}
+
+% Configuración de cajas personalizadas
+\newtcolorbox{componentBox}[2][]{
+	colback=tecnmBlue!5,
+	colframe=tecnmBlue!40!black,
+	title=#2,
+	width=\columnwidth,
+	#1
+}
+
 % Configuración del encabezado y pie de página
 \pagestyle{fancy}
 \fancyhf{}
 \renewcommand{\headrulewidth}{0pt}
 \renewcommand{\footrulewidth}{0pt}
-
-\definecolor{tecnmBlue}{RGB}{0, 43, 89}
-\definecolor{tecnmWhite}{RGB}{255, 255, 255}
 
 % Definir comandos para reducir la carga
 \newcommand{\smallgray}[1]{{\scriptsize\textcolor{gray}{#1}}}
@@ -50,7 +106,6 @@
 \fancyhead[L]{%
 	\hspace*{0.5cm}\raisebox{-2.2\height}{\includegraphics[height=1cm]{images/logotecnm.png}}%
 }
-
 \fancyhead[R]{%
 	\raisebox{-1.7\height}{%
 		\begin{tabular}[b]{r}
@@ -75,7 +130,6 @@
 	
 	\small\textcolor{gray}{ITM-2024.3--Ti2--PLANTILLA-INFORME INV-v5}
 }
-
 \fancyfoot[R]{%
 	\small
 	\textbf{21120721}%
@@ -84,19 +138,43 @@
 % Definir comando para citas
 \newcommand{\cita}[1]{\cite{#1}}
 
+% Estilo de títulos
+\titleformat{\section}
+{\color{tecnmBlue}\Large\bfseries}
+{\thesection}{1em}{}
+
+\titleformat{\subsection}
+{\color{tecnmBlue}\large\bfseries}
+{\thesubsection}{1em}{}
+
+% Configuración de siunitx
+\sisetup{
+	detect-all,
+	detect-family,
+	per-mode=symbol,
+	range-phrase=--,
+	range-units=single,
+	output-decimal-marker={,}
+}
+
 \begin{document}
 	\pagenumbering{arabic}
 	
-	
-	% Secciones principales
+	% Portada (una columna)
 	\input{sections/portada}
-	%\input{sections/introduccion}
-	%\input{sections/marcoTeorico}
-	%\input{sections/metodologia}
+	% Inicio de dos columnas para el contenido principal
+	\begin{multicols}{2}
+		\setlength{\columnsep}{1cm} % Espacio entre columnas
+		\tableofcontents
+		\listoffigures
+		\input{sections/introduccion}
+		%\input{sections/marcoTeorico}
+		%\input{sections/metodologia}
+	\end{multicols}
 	
-	% Referencias
-	%\clearpage
-	%\addcontentsline{toc}{section}{Referencias}
-	%\bibliography{referencias}  % Asegúrate de que el archivo referencias.bib está en el mismo directorio
+	% Referencias (una columna)
+	\clearpage
+	\addcontentsline{toc}{section}{Referencias}
+	\bibliography{referencias}
 	
 \end{document}

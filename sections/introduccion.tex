@@ -1,0 +1,173 @@
+% introduccion_componentes.tex
+
+% Configuración preliminar para ajustar el espacio
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+
+\section{Introducción}
+Esta práctica se centra en la creación de un piano básico utilizando Arduino, donde aprenderemos a integrar múltiples componentes electrónicos para crear un sistema interactivo musical \citep{monk2017programming}. Los pianos electrónicos modernos utilizan circuitos y componentes para generar distintas notas musicales, y en esta práctica simularemos este funcionamiento de manera simplificada \citep{evans2011arduino}.
+
+
+\subsection{LEDs (Diodos Emisores de Luz)}
+\begin{componentBox}{Características y Conexión \citep{platt2014encyclopedia}}
+	\begin{itemize}[leftmargin=*,itemsep=1pt,parsep=1pt]
+		\item \textbf{Polaridad}:
+		\begin{itemize}[itemsep=0pt,parsep=0pt]
+			\item Ánodo (+): Pata más larga
+			\item Cátodo (-): Pata más corta
+		\end{itemize}
+		\item \textbf{Especificaciones}:
+		\begin{itemize}[itemsep=0pt,parsep=0pt]
+			\item Voltaje típico: \SI{2.0}{\volt} - \SI{3.3}{\volt}
+			\item Corriente: \SI{20}{\milli\ampere}
+		\end{itemize}
+		\item \textbf{Conexión}:
+		\begin{itemize}[itemsep=0pt,parsep=0pt]
+			\item Ánodo → Resistencia → Pin
+			\item Cátodo → GND
+		\end{itemize}
+	\end{itemize}
+\end{componentBox}
+
+\begin{lstlisting}[
+	language=C++,
+	caption=Control de LED,
+	basicstyle=\ttfamily\scriptsize,
+	numbers=left,
+	numberstyle=\tiny\color{gray},
+	backgroundcolor=\color{codeBackground},
+	commentstyle=\color{comentarios},
+	keywordstyle=\color{identificador},
+	stringstyle=\color{cadena},
+	emph={pinMode,digitalWrite,HIGH,LOW},
+	emphstyle={\color{blue}\bfseries},
+	frame=single,
+	frameround=tttt,
+	rulecolor=\color{arduinoBlue},
+	xleftmargin=3mm,
+	xrightmargin=2mm,
+	breaklines=false,
+	columns=fullflexible,
+	keepspaces=true
+	]
+	const int ledPin = 13;
+	
+	void setup() {
+	pinMode(ledPin, OUTPUT);
+	}
+	
+	void loop() {
+	digitalWrite(ledPin, HIGH);  // Encender
+	delay(1000);
+	digitalWrite(ledPin, LOW);   // Apagar
+	delay(1000);
+	}
+\end{lstlisting}
+
+\subsection{Botones Pulsadores}
+\begin{componentBox}{Características y Conexión \citep{scherz2016practical}}
+	\begin{itemize}[leftmargin=*,itemsep=1pt,parsep=1pt]
+		\item \textbf{Tipo}: Interruptores (NO)
+		\item \textbf{Características}:
+		\begin{itemize}[itemsep=0pt,parsep=0pt]
+			\item Sin polaridad específica
+			\item Requieren resistencia pull-up
+			\item Estado normal: Abierto
+		\end{itemize}
+		\item \textbf{Conexión}:
+		\begin{itemize}[itemsep=0pt,parsep=0pt]
+			\item Terminal 1 → Pin Arduino
+			\item Terminal 2 → GND
+			\item R pull-up \SI{10}{\kilo\ohm} → \SI{5}{\volt}
+		\end{itemize}
+	\end{itemize}
+\end{componentBox}
+
+\subsection{Buzzer Pasivo}
+\begin{componentBox}{Características y Operación \citep{arduino_tone}}
+	\begin{itemize}[leftmargin=*,itemsep=1pt,parsep=1pt]
+		\item \textbf{Características}:
+		\begin{itemize}[itemsep=0pt,parsep=0pt]
+			\item Sin oscilador interno
+			\item Requiere señal PWM
+			\item Voltaje: \SI{3}{\volt}-\SI{12}{\volt}
+		\end{itemize}
+		\item \textbf{Conexión}:
+		\begin{itemize}[itemsep=0pt,parsep=0pt]
+			\item (+) → Pin PWM Arduino
+			\item (-) → GND
+		\end{itemize}
+		\item \textbf{Notas musicales}:
+		\begin{multicols}{2}
+			\begin{itemize}[itemsep=0pt,parsep=0pt]
+				\item DO (C4): \SI{261.63}{\hertz}
+				\item RE (D4): \SI{293.66}{\hertz}
+				\item MI (E4): \SI{329.63}{\hertz}
+				\item FA (F4): \SI{349.23}{\hertz}
+				\item SOL (G4): \SI{392.00}{\hertz}
+				\item LA (A4): \SI{440.00}{\hertz}
+				\item SI (B4): \SI{493.88}{\hertz}
+				\item DO (C5): \SI{523.25}{\hertz}
+			\end{itemize}
+		\end{multicols}
+	\end{itemize}
+\end{componentBox}
+
+\subsection{Resistencias}
+\begin{componentBox}{Tipos y Usos \citep{platt2014encyclopedia}}
+	\begin{itemize}[leftmargin=*,itemsep=1pt,parsep=1pt]
+		\item \textbf{Para LEDs}:
+		\begin{itemize}[itemsep=0pt,parsep=0pt]
+			\item Rango: \SI{220}{\ohm} - \SI{1}{\kilo\ohm}
+			\item Limitan corriente
+			\item R = $\frac{V_{\text{fuente}} - V_{\text{led}}}{I_{\text{led}}}$
+		\end{itemize}
+		\item \textbf{Pull-up}:
+		\begin{itemize}[itemsep=0pt,parsep=0pt]
+			\item Valor: \SI{10}{\kilo\ohm}
+			\item Mantiene estado lógico
+		\end{itemize}
+		\item \textbf{Código de colores}:
+		\begin{itemize}[itemsep=0pt,parsep=0pt]
+			\item \SI{220}{\ohm}: Rojo-Rojo-Marrón
+			\item \SI{1}{\kilo\ohm}: Marrón-Negro-Rojo
+			\item \SI{10}{\kilo\ohm}: Marrón-Negro-Naranja
+		\end{itemize}
+	\end{itemize}
+\end{componentBox}
+
+\section{Consideraciones de Diseño}
+\begin{componentBox}{Recomendaciones Importantes \citep{banzi2009getting}}
+	\begin{itemize}[leftmargin=*,itemsep=1pt,parsep=1pt]
+		\item \textbf{Pines Arduino}:
+		\begin{itemize}[itemsep=0pt,parsep=0pt]
+			\item PWM (3,5,6,9,10,11) → buzzer
+			\item LEDs en pines consecutivos
+			\item Botones con pull-up interno
+		\end{itemize}
+		\item \textbf{Seguridad}:
+		\begin{itemize}[itemsep=0pt,parsep=0pt]
+			\item Verificar polaridad
+			\item Máx. \SI{40}{\milli\ampere}/pin
+			\item Resistencias adecuadas
+			\item Desconectar al modificar
+		\end{itemize}
+		\item \textbf{Código}:
+		\begin{itemize}[itemsep=0pt,parsep=0pt]
+			\item Constantes para pines/notas
+			\item Debounce en botones
+			\item Funciones estructuradas
+		\end{itemize}
+	\end{itemize}
+\end{componentBox}
+
+\section{Objetivo del Proyecto}
+\begin{componentBox}{Objetivos}
+	El objetivo es crear un piano digital funcional que integre múltiples componentes electrónicos \citep{evans2011arduino}. Se desarrollarán habilidades en:
+	\begin{itemize}[leftmargin=*,itemsep=1pt]
+		\item Manejo de entradas/salidas digitales
+		\item Generación de tonos con PWM
+		\item Interacciones usuario-dispositivo
+		\item Sistemas multicomponente
+	\end{itemize}
+\end{componentBox}
