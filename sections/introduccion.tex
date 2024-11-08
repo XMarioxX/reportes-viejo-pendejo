@@ -29,40 +29,45 @@ Esta práctica se centra en la creación de un piano básico utilizando Arduino,
 	\end{itemize}
 \end{componentBox}
 
-\begin{lstlisting}[
-	language=C++,
-	caption=Control de LED,
-	basicstyle=\ttfamily\scriptsize,
-	numbers=left,
-	numberstyle=\tiny\color{gray},
-	backgroundcolor=\color{codeBackground},
-	commentstyle=\color{comentarios},
-	keywordstyle=\color{identificador},
-	stringstyle=\color{cadena},
-	emph={pinMode,digitalWrite,HIGH,LOW},
-	emphstyle={\color{blue}\bfseries},
-	frame=single,
-	frameround=tttt,
-	rulecolor=\color{arduinoBlue},
-	xleftmargin=3mm,
-	xrightmargin=2mm,
-	breaklines=false,
-	columns=fullflexible,
-	keepspaces=true
-	]
-	const int ledPin = 13;
-	
-	void setup() {
+\begin{figure}[H]
+	\centering
+	\begin{lstlisting}[
+		language=C++,
+		basicstyle=\ttfamily\scriptsize,
+		numbers=left,
+		numberstyle=\tiny\color{gray},
+		backgroundcolor=\color{codeBackground},
+		commentstyle=\color{comentarios},
+		keywordstyle=\color{identificador},
+		stringstyle=\color{cadena},
+		emph={pinMode,digitalWrite,HIGH,LOW},
+		emphstyle={\color{blue}\bfseries},
+		frame=single,
+		frameround=tttt,
+		rulecolor=\color{arduinoBlue},
+		xleftmargin=3mm,
+		xrightmargin=2mm,
+		breaklines=false,
+		columns=fullflexible,
+		keepspaces=true
+		basewidth=0.5em 
+]
+const int ledPin = 13;
+
+void setup() {
 	pinMode(ledPin, OUTPUT);
-	}
-	
-	void loop() {
+}
+
+void loop() {
 	digitalWrite(ledPin, HIGH);  // Encender
 	delay(1000);
 	digitalWrite(ledPin, LOW);   // Apagar
 	delay(1000);
-	}
-\end{lstlisting}
+}
+	\end{lstlisting}
+	\caption{Código de control de LED en Arduino}
+	\label{fig:codigo-led}
+\end{figure}
 
 \subsection{Botones Pulsadores}
 \begin{componentBox}{Características y Conexión \citep{scherz2016practical}}
