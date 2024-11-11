@@ -1,7 +1,27 @@
 \babel@toc {spanish}{}\relax 
-\contentsline {section}{\numberline {1}Introducción}{2}{section.1}%
-\contentsline {subsection}{\numberline {1.1}Transistor BJT BD235}{2}{subsection.1.1}%
+\contentsline {section}{\numberline {1}Introducción}{3}{section.1}%
+\contentsline {subsection}{\numberline {1.1}Transistor BJT BD235}{3}{subsection.1.1}%
 \contentsline {subsection}{\numberline {1.2}MOSFET IRLZ44}{3}{subsection.1.2}%
-\contentsline {subsection}{\numberline {1.3}Potenciómetro de Precisión \SI {10}{\kilo \ohm }}{3}{subsection.1.3}%
-\contentsline {subsection}{\numberline {1.4}Sistema de Iluminación \SI {12}{\volt }}{3}{subsection.1.4}%
-\contentsline {section}{Referencias}{4}{subsection.1.4}%
+\contentsline {subsection}{\numberline {1.3}Potenciómetro de Precisión \SI {10}{\kilo \ohm }}{4}{subsection.1.3}%
+\contentsline {subsection}{\numberline {1.4}Sistema de Iluminación \SI {12}{\volt }}{4}{subsection.1.4}%
+\contentsline {section}{\numberline {2}Desarrollo}{5}{section.2}%
+\contentsline {subsection}{\numberline {2.1}C\'odigo 1: Control ON/OFF con Transistor BJT}{5}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Análisis del Código 1}{5}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}Elementos del Circuito con BJT}{6}{subsection.2.3}%
+\contentsline {subsection}{\numberline {2.4}Funcionamiento del Control ON/OFF}{6}{subsection.2.4}%
+\contentsline {subsection}{\numberline {2.5}Diagrama de Tiempo BJT}{6}{subsection.2.5}%
+\contentsline {subsection}{\numberline {2.6}Ventajas y Características del BJT}{6}{subsection.2.6}%
+\contentsline {subsection}{\numberline {2.7}Limitaciones del Control BJT}{6}{subsection.2.7}%
+\contentsline {subsection}{\numberline {2.8}Aplicaciones Típicas del Control ON/OFF}{6}{subsection.2.8}%
+\contentsline {subsection}{\numberline {2.9}Código 2: MOSFET}{7}{subsection.2.9}%
+\contentsline {subsection}{\numberline {2.10}An\'alisis del C\'odigo 2}{7}{subsection.2.10}%
+\contentsline {subsection}{\numberline {2.11}Conexiones del Hardware}{8}{subsection.2.11}%
+\contentsline {subsubsection}{\numberline {2.11.1}Circuito con BJT (BD235)}{8}{subsubsection.2.11.1}%
+\contentsline {subsubsection}{\numberline {2.11.2}Circuito con MOSFET (IRLZ14)}{8}{subsubsection.2.11.2}%
+\contentsline {subsection}{\numberline {2.12}Consideraciones T\'ecnicas}{8}{subsection.2.12}%
+\contentsline {subsection}{\numberline {2.13}Problemas Comunes y Soluciones}{8}{subsection.2.13}%
+\contentsline {subsubsection}{\numberline {2.13.1}Circuito BJT}{8}{subsubsection.2.13.1}%
+\contentsline {subsubsection}{\numberline {2.13.2}Circuito MOSFET}{9}{subsubsection.2.13.2}%
+\contentsline {subsection}{\numberline {2.14}Medidas de Seguridad}{9}{subsection.2.14}%
+\contentsline {section}{\numberline {3}Conclusión}{9}{section.3}%
+\contentsline {section}{Referencias}{10}{section.3}%
