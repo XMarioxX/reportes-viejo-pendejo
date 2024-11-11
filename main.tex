@@ -53,10 +53,15 @@
 \definecolor{arduinoBlue}{RGB}{0,129,132}
 
 % Configuración de listings para código Arduino
+\setlength{\tabcolsep}{0.5pt} % Ajusta esto fuera del estilo
+
 \lstdefinestyle{arduinoStyle}{
 	language=C++,
 	backgroundcolor=\color{codeBackground},
 	basicstyle=\ttfamily\scriptsize,
+	columns=fixed,        % Cambiado a fixed para control exacto
+	basewidth={0.5em},    % Controla el ancho base de los caracteres
+	basewidth=0.4em,      % Hace los espacios más pequeños
 	breaklines=true,
 	captionpos=b,
 	commentstyle=\color{comentarios},
@@ -65,20 +70,19 @@
 	numbers=left,
 	numberstyle=\tiny\color{gray},
 	stepnumber=1,
-	numbersep=3pt,
-	tabsize=3,
+	numbersep=2pt,
 	showspaces=false,
 	showstringspaces=false,
 	frame=single,
 	frameround=tttt,
-	framesep=2mm,
+	framesep=1mm,
 	rulecolor=\color{arduinoBlue},
 	emph={pinMode,digitalWrite,HIGH,LOW,INPUT,OUTPUT,tone,noTone,delay,delayMicroseconds,millis,INPUT_PULLUP},
 	emphstyle={\color{blue}\bfseries},
 	morekeywords={setup,loop},
 	linewidth=\columnwidth,
-	xleftmargin=0.5cm,
-	xrightmargin=0.5cm,
+	xleftmargin=0.3cm,
+	xrightmargin=0.3cm,
 	float=h,
 	floatplacement=H,
 	belowskip=-0.2cm,
@@ -168,10 +172,9 @@
 		\tableofcontents
 		\listoffigures
 		\input{sections/introduccion}
-		%\input{sections/marcoTeorico}
-		%\input{sections/metodologia}
+		\input{sections/desarrollo}
+		\input{sections/documentacion}
 	\end{multicols}
-	
 	% Referencias (una columna)
 	\clearpage
 	\addcontentsline{toc}{section}{Referencias}

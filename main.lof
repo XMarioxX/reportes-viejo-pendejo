@@ -1,2 +1,16 @@
 \babel@toc {spanish}{}\relax 
-\contentsline {figure}{\numberline {1}{\ignorespaces Código de control de LED en Arduino}}{2}{figure.1}%
+\contentsline {figure}{\numberline {1}{\ignorespaces Código de control de LED en Arduino}}{3}{figure.1}%
+\contentsline {figure}{\numberline {2}{\ignorespaces Definicion de Variables Globales}}{7}{figure.2}%
+\contentsline {figure}{\numberline {3}{\ignorespaces Funcion de Configuracion}}{7}{figure.3}%
+\contentsline {figure}{\numberline {4}{\ignorespaces Bucle Principal y Control de Notas}}{7}{figure.4}%
+\contentsline {figure}{\numberline {5}{\ignorespaces Funcion de Control LED-Tono}}{7}{figure.5}%
+\contentsline {figure}{\numberline {6}{\ignorespaces Implementacion del Tema de Tetris}}{8}{figure.6}%
+\contentsline {figure}{\numberline {7}{\ignorespaces Mecanismos de Control Temporal}}{8}{figure.7}%
+\contentsline {figure}{\numberline {8}{\ignorespaces Estructura Musical del Tema de Tetris}}{8}{figure.8}%
+\contentsline {figure}{\numberline {9}{\ignorespaces Diagrama de Conexiones del Sistema}}{9}{figure.9}%
+\contentsline {figure}{\numberline {10}{\ignorespaces Definición de Arrays para Notas y Pines}}{9}{figure.10}%
+\contentsline {figure}{\numberline {11}{\ignorespaces Implementación de Control de Tiempo}}{9}{figure.11}%
+\contentsline {figure}{\numberline {12}{\ignorespaces Sistema de Patrones LED}}{9}{figure.12}%
+\contentsline {figure}{\numberline {13}{\ignorespaces Estructuras de Datos Optimizadas}}{10}{figure.13}%
+\contentsline {figure}{\numberline {14}{\ignorespaces Implementación del Modo Práctica}}{10}{figure.14}%
+\contentsline {figure}{\numberline {15}{\ignorespaces Sistema de Verificación}}{10}{figure.15}%

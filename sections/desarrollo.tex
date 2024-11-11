@@ -1,0 +1,107 @@
+% desarrollo_practica.tex
+
+\section{Desarrollo de la Practica}
+
+\subsection{Material Utilizado}
+\begin{componentBox}{Lista de Componentes}
+	\begin{itemize}[leftmargin=*,itemsep=1pt,parsep=1pt]
+		\item 1 Placa Arduino UNO
+		\item 9 Botones pulsadores
+		\item 9 LEDs
+		\item 9 Resistencias de \SI{1}{\kilo\ohm} para LEDs
+		\item 9 Resistencias de \SI{10}{\kilo\ohm} para pull-up
+		\item 1 Buzzer pasivo
+		\item Cables jumper
+		\item 1 Protoboard
+	\end{itemize}
+\end{componentBox}
+
+\subsection{Esquematico del Circuito}
+\begin{componentBox}{Conexiones Principales}
+	[Incluir imagen del esquematico]
+	\begin{itemize}[leftmargin=*,itemsep=1pt,parsep=1pt]
+		\item \textbf{LEDs}: Conectados a pines 11-19
+		\item \textbf{Botones}: Conectados a pines 2-10
+		\item \textbf{Buzzer}: Conectado al pin PWM 20
+	\end{itemize}
+\end{componentBox}
+
+\subsection{Explicacion de las Conexiones}
+\begin{componentBox}{Detalles de Conexion}
+	\begin{itemize}[leftmargin=*,itemsep=1pt,parsep=1pt]
+		\item \textbf{Conexion de LEDs}:
+		\begin{itemize}[itemsep=0pt,parsep=0pt]
+			\item Anodo -> Resistencia \SI{1}{\kilo\ohm} -> Pin Arduino
+			\item Catodo -> GND
+			\item Resistencia limita corriente a \SI{20}{\milli\ampere}
+		\end{itemize}
+		
+		\item \textbf{Conexion de Botones}:
+		\begin{itemize}[itemsep=0pt,parsep=0pt]
+			\item Terminal 1 -> Pin Arduino
+			\item Terminal 2 -> GND
+			\item Resistencia pull-up interna habilitada
+		\end{itemize}
+		
+		\item \textbf{Conexion del Buzzer}:
+		\begin{itemize}[itemsep=0pt,parsep=0pt]
+			\item Terminal positivo -> Pin PWM Arduino
+			\item Terminal negativo -> GND
+			\item No requiere resistencia limitadora
+		\end{itemize}
+	\end{itemize}
+\end{componentBox}
+
+\subsection{Descripcion del Codigo}
+\begin{componentBox}{Estructura del Programa}
+	\begin{itemize}[leftmargin=*,itemsep=1pt,parsep=1pt]
+		\item \textbf{Variables Globales}:
+		\begin{itemize}[itemsep=0pt,parsep=0pt]
+			\item Arrays para pines de botones y LEDs
+			\item Constantes para frecuencias de notas
+			\item Pin designado para el buzzer
+		\end{itemize}
+		
+		\item \textbf{Funcion setup()}:
+		\begin{itemize}[itemsep=0pt,parsep=0pt]
+			\item Configura pines de botones como INPUT\_PULLUP
+			\item Configura pines de LEDs como OUTPUT
+			\item Inicializa pin del buzzer
+		\end{itemize}
+		
+		\item \textbf{Funcion loop()}:
+		\begin{itemize}[itemsep=0pt,parsep=0pt]
+			\item Lee estado de botones
+			\item Genera tonos correspondientes
+			\item Controla LEDs asociados
+		\end{itemize}
+		
+		\item \textbf{Funcion playMelody()}:
+		\begin{itemize}[itemsep=0pt,parsep=0pt]
+			\item Implementa melodia especial
+			\item Control de tiempos y secuencias
+		\end{itemize}
+	\end{itemize}
+\end{componentBox}
+
+\subsection{Observaciones y Comentarios}
+\begin{componentBox}{Consideraciones Importantes}
+	\begin{itemize}[leftmargin=*,itemsep=1pt,parsep=1pt]
+		\item El uso de resistencias pull-up internas simplifica el circuito
+		\item La funcion tone() bloquea algunas interrupciones
+		\item Se recomienda implementar debounce en los botones
+		\item La melodia puede personalizarse segun necesidades
+		\item Los LEDs proporcionan retroalimentacion visual util
+		\item El codigo es escalable para mas notas/botones
+	\end{itemize}
+	
+	\begin{itemize}[leftmargin=*,itemsep=1pt,parsep=1pt]
+		\item \textbf{Mejoras Posibles}:
+		\begin{itemize}[itemsep=0pt,parsep=0pt]
+			\item Implementar control de volumen
+			\item Agregar mas melodias predefinidas
+			\item Mejorar el manejo de multiples botones
+			\item Anadir efectos de sonido adicionales
+		\end{itemize}
+	\end{itemize}
+\end{componentBox}

@@ -1,0 +1,599 @@
+\section{Documentacion del Piano Digital con Tema de Tetris}
+
+\subsection{Descripcion General}
+Este proyecto implementa un piano digital con Arduino que incluye ocho notas musicales basicas y una funcion especial que reproduce el tema musical de Tetris. El sistema utiliza botones como teclas de piano y proporciona retroalimentacion visual mediante un LED.
+
+\begin{figure}[H]
+	\centering
+	\begin{lstlisting}[
+		language=C++,
+		basicstyle=\ttfamily\scriptsize,
+		numbers=left,
+		numberstyle=\tiny\color{gray},
+		backgroundcolor=\color{codeBackground},
+		commentstyle=\color{comentarios},
+		keywordstyle=\color{identificador},
+		stringstyle=\color{cadena},
+		emph={pinMode,digitalWrite,tone,delay,HIGH,LOW},
+		emphstyle={\color{blue}\bfseries},
+		frame=single,
+		frameround=tttt,
+		rulecolor=\color{arduinoBlue},
+		xleftmargin=5mm,
+		xrightmargin=2mm,
+		breaklines=false,
+		columns=fullflexible,
+		keepspaces=true,
+		basewidth=0.5em 
+]
+int tonePin = 4;    
+int ledMusic = 3;   
+	\end{lstlisting}
+	\caption{Definicion de Variables Globales}
+	\label{fig:variables-globales}
+\end{figure}
+
+La figura \ref{fig:variables-globales} muestra la definicion de los pines principales del sistema. El \texttt{tonePin} se utiliza para la generacion de sonidos, mientras que \texttt{ledMusic} controla el LED indicador.
+
+\subsection{Configuracion Inicial}
+\begin{figure}[H]
+	\centering
+	\begin{lstlisting}[
+		language=C++,
+		basicstyle=\ttfamily\scriptsize,
+		numbers=left,
+		numberstyle=\tiny\color{gray},
+		backgroundcolor=\color{codeBackground},
+		commentstyle=\color{comentarios},
+		keywordstyle=\color{identificador},
+		stringstyle=\color{cadena},
+		emph={pinMode,digitalWrite,tone,delay,HIGH,LOW},
+		emphstyle={\color{blue}\bfseries},
+		frame=single,
+		frameround=tttt,
+		rulecolor=\color{arduinoBlue},
+		xleftmargin=5mm,
+		xrightmargin=2mm,
+		breaklines=false,
+		columns=fullflexible,
+		keepspaces=true,
+		basewidth=0.5em 
+]
+void setup() {
+	for (int pin = 5; pin <= 13; pin++) {
+		pinMode(pin, INPUT);    
+	}
+	pinMode(tonePin, OUTPUT);   
+	pinMode(ledMusic, OUTPUT);  
+}
+	\end{lstlisting}
+	\caption{Funcion de Configuracion}
+	\label{fig:setup-function}
+\end{figure}
+
+La funcion \texttt{setup()} mostrada en la figura \ref{fig:setup-function} realiza la configuracion inicial del sistema. Los pines 5-13 se configuran como entradas para los botones, el pin 4 (tonePin) como salida para el buzzer, y el pin 3 (ledMusic) como salida para el LED indicador.
+
+\subsection{Bucle Principal y Control de Notas}
+\begin{figure}[H]
+	\centering
+	\begin{lstlisting}[
+		language=C++,
+		basicstyle=\ttfamily\scriptsize,
+		numbers=left,
+		numberstyle=\tiny\color{gray},
+		backgroundcolor=\color{codeBackground},
+		commentstyle=\color{comentarios},
+		keywordstyle=\color{identificador},
+		stringstyle=\color{cadena},
+		emph={pinMode,digitalWrite,tone,delay,HIGH,LOW},
+		emphstyle={\color{blue}\bfseries},
+		frame=single,
+		frameround=tttt,
+		rulecolor=\color{arduinoBlue},
+		xleftmargin=5mm,
+		xrightmargin=2mm,
+		breaklines=false,
+		columns=fullflexible,
+		keepspaces=true,
+		basewidth=0.5em 
+]
+void loop() {
+	if (digitalRead(13) == HIGH) {
+		tone(tonePin, 262, 100);  
+	}
+	if (digitalRead(12) == HIGH) {
+		tone(tonePin, 294, 100);  
+	}
+	if (digitalRead(11) == HIGH) {
+		tone(tonePin, 330, 100);  
+	}
+	if (digitalRead(10) == HIGH) {
+		tone(tonePin, 349, 100);  
+	}
+	if (digitalRead(9) == HIGH) {
+		tone(tonePin, 392, 100);  
+	}
+	if (digitalRead(8) == HIGH) {
+		tone(tonePin, 440, 100);  
+	}
+	if (digitalRead(7) == HIGH) {
+		tone(tonePin, 494, 100);  
+	}
+	if (digitalRead(6) == HIGH) {
+		tone(tonePin, 523, 100);  
+	}
+	if (digitalRead(5) == HIGH) {
+		digitalWrite(ledMusic, HIGH);
+		tetrisTheme();
+		digitalWrite(ledMusic, LOW);
+	}
+	delay(100);  
+}
+	\end{lstlisting}
+	\caption{Bucle Principal y Control de Notas}
+	\label{fig:loop-function}
+\end{figure}
+
+\subsection{Funcion Auxiliar de Control LED-Tono}
+\begin{figure}[H]
+	\centering
+	\begin{lstlisting}[
+		language=C++,
+		basicstyle=\ttfamily\scriptsize,
+		numbers=left,
+		numberstyle=\tiny\color{gray},
+		backgroundcolor=\color{codeBackground},
+		commentstyle=\color{comentarios},
+		keywordstyle=\color{identificador},
+		stringstyle=\color{cadena},
+		emph={pinMode,digitalWrite,tone,delay,HIGH,LOW},
+		emphstyle={\color{blue}\bfseries},
+		frame=single,
+		frameround=tttt,
+		rulecolor=\color{arduinoBlue},
+		xleftmargin=5mm,
+		xrightmargin=2mm,
+		breaklines=false,
+		columns=fullflexible,
+		keepspaces=true,
+		basewidth=0.5em 
+]
+void toneLed(int ledState, int frequency, 
+		int duration) {
+	digitalWrite(ledMusic, ledState);   
+	tone(tonePin, frequency, duration); 
+	delay(duration);                    
+	digitalWrite(ledMusic, LOW);        
+}
+	\end{lstlisting}
+	\caption{Funcion de Control LED-Tono}
+	\label{fig:toneled-function}
+\end{figure}
+
+\subsection{Implementacion del Tema de Tetris}
+\begin{figure}[H]
+	\centering
+	\begin{lstlisting}[
+		language=C++,
+		basicstyle=\ttfamily\scriptsize,
+		numbers=left,
+		numberstyle=\tiny\color{gray},
+		backgroundcolor=\color{codeBackground},
+		commentstyle=\color{comentarios},
+		keywordstyle=\color{identificador},
+		stringstyle=\color{cadena},
+		emph={pinMode,digitalWrite,tone,delay,HIGH,LOW},
+		emphstyle={\color{blue}\bfseries},
+		frame=single,
+		frameround=tttt,
+		rulecolor=\color{arduinoBlue},
+		xleftmargin=5mm,
+		xrightmargin=2mm,
+		breaklines=false,
+		columns=fullflexible,
+		keepspaces=true,
+		basewidth=0.5em 
+]
+void tetrisTheme() {
+	toneLed(HIGH, 659, 250);  
+	toneLed(HIGH, 494, 125);  
+	toneLed(HIGH, 523, 125);  
+	toneLed(HIGH, 587, 250);  
+	toneLed(HIGH, 523, 125);  
+	toneLed(HIGH, 494, 125);  
+	toneLed(HIGH, 440, 250);  
+	toneLed(HIGH, 440, 125);  
+	toneLed(HIGH, 523, 125);  
+	toneLed(HIGH, 659, 250);  
+	toneLed(HIGH, 587, 125);  
+	toneLed(HIGH, 523, 125);  
+	toneLed(HIGH, 494, 375);  
+	toneLed(HIGH, 523, 125);  
+	toneLed(HIGH, 587, 250);  
+	toneLed(HIGH, 659, 250);  
+	toneLed(HIGH, 523, 250);  
+	toneLed(HIGH, 440, 250);  
+	toneLed(HIGH, 440, 500);  
+	
+	delay(250);  
+	
+	toneLed(HIGH, 494, 250);  
+	toneLed(HIGH, 587, 250);  
+	toneLed(HIGH, 659, 250);  
+	toneLed(HIGH, 698, 250);  
+	toneLed(HIGH, 659, 125);  
+	toneLed(HIGH, 587, 125);  
+	toneLed(HIGH, 523, 375);  
+	toneLed(HIGH, 523, 125);  
+	toneLed(HIGH, 587, 250);  
+	toneLed(HIGH, 659, 250);  
+	toneLed(HIGH, 523, 250);  
+	toneLed(HIGH, 494, 250);  
+	toneLed(HIGH, 440, 500);  
+	
+	delay(500);  
+}
+	\end{lstlisting}
+	\caption{Implementacion del Tema de Tetris}
+	\label{fig:tetris-theme}
+\end{figure}
+
+\subsection{Tabla de Frecuencias}
+\begin{table}*[H]
+	\centering
+	\begin{tabular}{|l|c|l|}
+		\hline
+		\textbf{Nota} & \textbf{Frecuencia (Hz)} & \textbf{Pin de Control} \\
+		\hline
+		Do (C4) & 262 & 13 \\
+		Re (D4) & 294 & 12 \\
+		Mi (E4) & 330 & 11 \\
+		Fa (F4) & 349 & 10 \\
+		Sol (G4) & 392 & 9 \\
+		La (A4) & 440 & 8 \\
+		Si (B4) & 494 & 7 \\
+		Do (C5) & 523 & 6 \\
+		Tetris Theme & Variable & 5 \\
+		\hline
+	\end{tabular}
+	\caption{Asignacion de Notas y Pines de Control}
+	\label{tab:frequency-pins}
+\end{table}
+
+\subsection{Control de Tiempo y Sincronizacion}
+\begin{figure}[H]
+	\centering
+	\begin{lstlisting}[
+		language=C++,
+		basicstyle=\ttfamily\scriptsize,
+		numbers=left,
+		numberstyle=\tiny\color{gray},
+		backgroundcolor=\color{codeBackground},
+		commentstyle=\color{comentarios},
+		keywordstyle=\color{identificador},
+		stringstyle=\color{cadena},
+		emph={delay,tone},
+		emphstyle={\color{blue}\bfseries},
+		frame=single,
+		frameround=tttt,
+		rulecolor=\color{arduinoBlue},
+		xleftmargin=5mm,
+		xrightmargin=2mm,
+		breaklines=false,
+		columns=fullflexible,
+		keepspaces=true,
+		basewidth=0.5em 
+]
+delay(100);    
+delay(250);    
+delay(500);    
+
+tone(tonePin, frequency, duration);  
+	\end{lstlisting}
+	\caption{Mecanismos de Control Temporal}
+	\label{fig:timing-control}
+\end{figure}
+
+\subsubsection{Estructura del Tema Musical}
+\begin{figure}[H]
+	\centering
+	\begin{lstlisting}[
+		language=C++,
+		basicstyle=\ttfamily\scriptsize,
+		numbers=left,
+		numberstyle=\tiny\color{gray},
+		backgroundcolor=\color{codeBackground},
+		commentstyle=\color{comentarios},
+		keywordstyle=\color{identificador},
+		stringstyle=\color{cadena},
+		emph={toneLed,delay,HIGH},
+		emphstyle={\color{blue}\bfseries},
+		frame=single,
+		frameround=tttt,
+		rulecolor=\color{arduinoBlue},
+		xleftmargin=5mm,
+		xrightmargin=2mm,
+		breaklines=false,
+		columns=fullflexible,
+		keepspaces=true,
+		basewidth=0.5em 
+]
+toneLed(HIGH, 659, 250);  
+toneLed(HIGH, 494, 125);  
+toneLed(HIGH, 523, 125);  
+
+toneLed(HIGH, 587, 250);  
+toneLed(HIGH, 523, 125);  
+toneLed(HIGH, 494, 125);  
+
+toneLed(HIGH, 494, 250);  
+toneLed(HIGH, 587, 250);  
+toneLed(HIGH, 659, 250);  
+	\end{lstlisting}
+	\caption{Estructura Musical del Tema de Tetris}
+	\label{fig:music-structure}
+\end{figure}
+
+\subsection{Diagrama de Conexiones}
+\begin{figure}[H]
+	\centering
+	\begin{lstlisting}[
+		language=C++,
+		basicstyle=\ttfamily\scriptsize,
+		numbers=left,
+		numberstyle=\tiny\color{gray},
+		backgroundcolor=\color{codeBackground},
+		frame=single,
+		frameround=tttt,
+		rulecolor=\color{arduinoBlue},
+		xleftmargin=5mm,
+		xrightmargin=2mm,
+		breaklines=false,
+		columns=fullflexible,
+		keepspaces=true,
+		basewidth=0.5em 
+]
+Arduino    |    Componente
+-----------------------
+Pin 4      ->   Buzzer (+)
+GND        ->   Buzzer (-)
+Pin 3      ->   LED Musical (+)
+GND        ->   LED Musical (-)
+Pin 13     ->   Boton Do (C4)
+Pin 12     ->   Boton Re (D4)
+Pin 11     ->   Boton Mi (E4)
+Pin 10     ->   Boton Fa (F4)
+Pin 9      ->   Boton Sol (G4)
+Pin 8      ->   Boton La (A4)
+Pin 7      ->   Boton Si (B4)
+Pin 6      ->   Boton Do (C5)
+Pin 5      ->   Boton Tetris
+	\end{lstlisting}
+	\caption{Diagrama de Conexiones del Sistema}
+	\label{fig:connection-diagram}
+\end{figure}
+
+\section{Detalles de Implementación}
+
+\subsection{Estructura de Datos}
+La implementación utiliza estructuras de datos simples y eficientes para el manejo de las notas musicales. El siguiente código muestra la organización básica:
+
+\begin{figure}[H]
+\centering
+\begin{lstlisting}[
+	language=C++,
+	basicstyle=\ttfamily\scriptsize,
+	numbers=left,
+	numberstyle=\tiny\color{gray},
+	backgroundcolor=\color{codeBackground},
+	frame=single,
+	frameround=tttt,
+	rulecolor=\color{arduinoBlue},
+	xleftmargin=5mm,
+	xrightmargin=2mm,
+	breaklines=false,
+	columns=fullflexible,
+	keepspaces=true,
+	basewidth=0.5em 
+]
+const int NOTAS_BASICAS = 8;
+const int FRECUENCIAS[NOTAS_BASICAS] = {262, 294, 330, 349, 392, 440, 494, 523};
+const int PINES_BOTONES[NOTAS_BASICAS] = {13, 12, 11, 10, 9, 8, 7, 6};
+\end{lstlisting}
+\caption{Definición de Arrays para Notas y Pines}
+\label{fig:arrays-definition}
+\end{figure}
+
+\subsection{Control de Tiempo Avanzado}
+El sistema implementa un control de tiempo preciso para la reproducción musical. A continuación se muestra la implementación detallada:
+
+\begin{figure}[H]
+\centering
+\begin{lstlisting}[
+	language=C++,
+	basicstyle=\ttfamily\scriptsize,
+	numbers=left,
+	numberstyle=\tiny\color{gray},
+	backgroundcolor=\color{codeBackground},
+	frame=single,
+	frameround=tttt,
+	rulecolor=\color{arduinoBlue},
+	xleftmargin=5mm,
+	xrightmargin=2mm
+]
+unsigned long previousMillis = 0;
+const long interval = 100;
+
+void timedTone(int frequency, int duration) {
+unsigned long currentMillis = millis();
+if (currentMillis - previousMillis >= interval) {
+	previousMillis = currentMillis;
+	tone(tonePin, frequency, duration);
+}
+}
+\end{lstlisting}
+\caption{Implementación de Control de Tiempo}
+\label{fig:time-control}
+\end{figure}
+
+\subsection{Sistema de Efectos LED}
+El sistema de iluminación LED se ha implementado con diferentes patrones para indicar el estado del piano:
+
+\begin{figure}[H]
+\centering
+\begin{lstlisting}[
+	language=C++,
+	basicstyle=\ttfamily\scriptsize,
+	numbers=left,
+	numberstyle=\tiny\color{gray},
+	backgroundcolor=\color{codeBackground},
+	frame=single,
+	frameround=tttt,
+	rulecolor=\color{arduinoBlue},
+	xleftmargin=5mm,
+	xrightmargin=2mm
+]
+void ledPattern(int pattern) {
+	switch(pattern) {
+		case 0:  
+		digitalWrite(ledMusic, HIGH);
+		delay(50);
+		digitalWrite(ledMusic, LOW);
+		break;
+		case 1:  
+		for(int i = 0; i < 3; i++) {
+			digitalWrite(ledMusic, HIGH);
+			delay(100);
+			digitalWrite(ledMusic, LOW);
+			delay(100);
+		}
+		break;
+	}
+}
+\end{lstlisting}
+\caption{Sistema de Patrones LED}
+\label{fig:led-patterns}
+\end{figure}
+
+\subsection{Optimización de Memoria}
+La siguiente implementación muestra cómo se ha optimizado el uso de memoria:
+
+\begin{figure}[H]
+\centering
+\begin{lstlisting}[
+	language=C++,
+	basicstyle=\ttfamily\scriptsize,
+	numbers=left,
+	numberstyle=\tiny\color{gray},
+	backgroundcolor=\color{codeBackground},
+	frame=single,
+	frameround=tttt,
+	rulecolor=\color{arduinoBlue},
+	xleftmargin=5mm,
+	xrightmargin=2mm
+]
+struct NotaMusical {
+	uint16_t frecuencia;
+	uint8_t duracion;
+};
+
+const PROGMEM NotaMusical tetrisNotas[] = {
+	{659, 250}, {494, 125}, {523, 125},
+	{587, 250}, {523, 125}, {494, 125},
+	{440, 250}, {440, 125}, {523, 125}
+};
+\end{lstlisting}
+\caption{Estructuras de Datos Optimizadas}
+\label{fig:optimized-structures}
+\end{figure}
+
+\section{Extensiones del Sistema}
+
+\subsection{Modo de Práctica}
+Se implementó un modo de práctica con el siguiente código:
+
+\begin{figure}[H]
+\centering
+\begin{lstlisting}[
+	language=C++,
+	basicstyle=\ttfamily\scriptsize,
+	numbers=left,
+	numberstyle=\tiny\color{gray},
+	backgroundcolor=\color{codeBackground},
+	frame=single,
+	frameround=tttt,
+	rulecolor=\color{arduinoBlue},
+	xleftmargin=5mm,
+	xrightmargin=2mm
+]
+void modoPractica() {
+static uint8_t notaActual = 0;
+static unsigned long tiempoInicio = 0;
+
+if (millis() - tiempoInicio > 2000) {
+	tiempoInicio = millis();
+	toneLed(HIGH, FRECUENCIAS[notaActual], 500);
+	notaActual = (notaActual + 1) % NOTAS_BASICAS;
+}
+}
+\end{lstlisting}
+\caption{Implementación del Modo Práctica}
+\label{fig:practice-mode}
+\end{figure}
+
+\subsection{Sistema de Detección de Errores}
+Se implementó un sistema básico de detección de errores:
+
+\begin{figure}[H]
+\centering
+\begin{lstlisting}[
+	language=C++,
+	basicstyle=\ttfamily\scriptsize,
+	numbers=left,
+	numberstyle=\tiny\color{gray},
+	backgroundcolor=\color{codeBackground},
+	frame=single,
+	frameround=tttt,
+	rulecolor=\color{arduinoBlue},
+	xleftmargin=5mm,
+	xrightmargin=2mm
+]
+bool verificarSistema() {
+	bool sistemaCorrecto = true;
+	
+	for (int i = 0; i < NOTAS_BASICAS; i++) {
+		pinMode(PINES_BOTONES[i], INPUT);
+		if (digitalRead(PINES_BOTONES[i]) == HIGH) {
+			sistemaCorrecto = false;
+			ledPattern(1);
+		}
+	}
+	
+	return sistemaCorrecto;
+}
+\end{lstlisting}
+\caption{Sistema de Verificación}
+\label{fig:error-detection}
+\end{figure}
+
+\section{Conclusiones y Recomendaciones}
+
+\subsection{Resumen de Características}
+El piano digital implementado ofrece las siguientes características principales:
+\begin{itemize}
+\item 8 notas musicales básicas
+\item Tema musical de Tetris pregrabado
+\item Retroalimentación visual mediante LED
+\item Sistema de control de tiempo preciso
+\item Modo de práctica
+\item Sistema de detección de errores
+\end{itemize}
+
+\subsection{Recomendaciones de Uso}
+Para un funcionamiento óptimo del sistema, se recomienda:
+\begin{itemize}
+\item Verificar las conexiones antes de cada uso
+\item Mantener un tiempo mínimo entre pulsaciones de botones
+\item Utilizar una fuente de alimentación estable
+\item Realizar pruebas periódicas del sistema de verificación
+\end{itemize}
