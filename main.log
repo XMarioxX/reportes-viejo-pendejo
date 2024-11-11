@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2024.11.7)  10 NOV 2024 20:09
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2024.11.7)  10 NOV 2024 20:24
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -966,7 +966,7 @@ Package hyperref Info: Link coloring OFF on input line 164.
 \openout4 = `main.out'.
 
  (./sections/portada.tex
-<images/logotecnm.png, id=146, 264.99pt x 33.2442pt>
+<images/logotecnm.png, id=30, 264.99pt x 33.2442pt>
 File: images/logotecnm.png Graphic file (type png)
 <use images/logotecnm.png>
 Package pdftex.def Info: images/logotecnm.png  used on input line 54.
@@ -986,7 +986,7 @@ Package fancyhdr Warning: \headheight is too small (60.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-26.4202pt}.
 
-<images/fondo_portada.png, id=149, 612.06444pt x 791.40111pt>
+<images/fondo_portada.png, id=33, 612.06444pt x 791.40111pt>
 File: images/fondo_portada.png Graphic file (type png)
 <use images/fondo_portada.png>
 Package pdftex.def Info: images/fondo_portada.png  used on input line 54.
@@ -1001,6 +1001,11 @@ c/dvips/cm-super/cm-super-t1.enc}
  <./images/fondo_portada.png> <./images/logotecnm.png>]) (./main.toc
 LaTeX Info: Redefining \. on input line 1.
 LaTeX Info: Redefining \% on input line 1.
+
+Underfull \hbox (badness 6876) in paragraph at lines 5--5
+ [][] [][]\T1/cmr/m/n/12 Potenciómetro de Pre-ci-sión 
+ []
+
 )
 \tf@toc=\write5
 \openout5 = `main.toc'.
@@ -1008,21 +1013,34 @@ LaTeX Info: Redefining \% on input line 1.
  (./main.lof
 LaTeX Info: Redefining \. on input line 1.
 LaTeX Info: Redefining \% on input line 1.
-
-Underfull \hbox (badness 10000) in paragraph at lines 15--15
- [][] [][]\T1/cmr/m/n/12 Implementación del Mo-do 
- []
-
 )
 \tf@lof=\write6
 \openout6 = `main.lof'.
 
  (./sections/introduccion.tex
+Underfull \hbox (badness 10000) in paragraph at lines 31--32
+[]\T1/cmr/m/n/12 Resistencia en con-duc-ción
+ []
+
+
+Underfull \hbox (badness 5832) in paragraph at lines 37--38
+[]\T1/cmr/m/n/12 Terminal de Dre-na-dor (D):
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 46--47
+[]\T1/cmr/bx/n/12 Especificaciones Fun-da-men-ta-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 50--51
+[]\T1/cmr/m/n/12 Característica de va-ria-ción:
+ []
+
 File: images/logotecnm.png Graphic file (type png)
 <use images/logotecnm.png>
-Package pdftex.def Info: images/logotecnm.png  used on input line 9.
+Package pdftex.def Info: images/logotecnm.png  used on input line 60.
 (pdftex.def)             Requested size: 226.80736pt x 28.45274pt.
-
 
 Package fancyhdr Warning: \headheight is too small (60.0pt): 
 (fancyhdr)                Make it at least 86.4202pt, for example:
@@ -1033,281 +1051,7 @@ Package fancyhdr Warning: \headheight is too small (60.0pt):
 
 [2
 
-]
-Underfull \hbox (badness 6708) in paragraph at lines 12--12
-[]\T1/cmr/m/n/12 Características y Co-ne-xión ([]Platt[],
- []
-
-(/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
-File: lstlang1.sty 2023/02/27 1.9 listings language file
-)
-(/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
-File: lstlang1.sty 2023/02/27 1.9 listings language file
-)
-(/usr/share/texlive/texmf-dist/tex/latex/listings/lstmisc.sty
-File: lstmisc.sty 2023/02/27 1.9 (Carsten Heinz)
-)
-LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 5
-4.
-
-(/usr/share/texlive/texmf-dist/tex/latex/base/t1cmtt.fd
-File: t1cmtt.fd 2023/04/13 v2.5m Standard LaTeX font definitions
-)
-LaTeX Font Info:    Font shape `T1/cmtt/bx/n' in size <8> not available
-(Font)              Font shape `T1/cmtt/m/n' tried instead on input line 58.
-
-Underfull \hbox (badness 10000) in paragraph at lines 110--111
-[]\T1/cmr/m/n/12 MI (E4):
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 111--112
-[]\T1/cmr/m/n/12 FA (F4):
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 114--115
-[]\T1/cmr/m/n/12 SI (B4):
- []
-
-File: images/logotecnm.png Graphic file (type png)
-<use images/logotecnm.png>
-Package pdftex.def Info: images/logotecnm.png  used on input line 120.
-(pdftex.def)             Requested size: 226.80736pt x 28.45274pt.
-
-Package fancyhdr Warning: \headheight is too small (60.0pt): 
-(fancyhdr)                Make it at least 86.4202pt, for example:
-(fancyhdr)                \setlength{\headheight}{86.4202pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-
-(fancyhdr)                \addtolength{\topmargin}{-26.4202pt}.
-
-[3{/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-ts1.enc}])
-(./sections/desarrollo.tex
-File: images/logotecnm.png Graphic file (type png)
-<use images/logotecnm.png>
-Package pdftex.def Info: images/logotecnm.png  used on input line 5.
-(pdftex.def)             Requested size: 226.80736pt x 28.45274pt.
-
-
-Package fancyhdr Warning: \headheight is too small (60.0pt): 
-(fancyhdr)                Make it at least 86.4202pt, for example:
-(fancyhdr)                \setlength{\headheight}{86.4202pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-
-(fancyhdr)                \addtolength{\topmargin}{-26.4202pt}.
-
-[4]
-File: images/logotecnm.png Graphic file (type png)
-<use images/logotecnm.png>
-Package pdftex.def Info: images/logotecnm.png  used on input line 86.
-(pdftex.def)             Requested size: 226.80736pt x 28.45274pt.
-
-
-Package fancyhdr Warning: \headheight is too small (60.0pt): 
-(fancyhdr)                Make it at least 86.4202pt, for example:
-(fancyhdr)                \setlength{\headheight}{86.4202pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-
-(fancyhdr)                \addtolength{\topmargin}{-26.4202pt}.
-
-[5]) (./sections/documentacion.tex
-Underfull \hbox (badness 10000) in paragraph at lines 1--1
-|[]\T1/cmr/bx/n/17.28 Documentacion del
- []
-
-File: images/logotecnm.png Graphic file (type png)
-<use images/logotecnm.png>
-Package pdftex.def Info: images/logotecnm.png  used on input line 73.
-(pdftex.def)             Requested size: 226.80736pt x 28.45274pt.
-
-Package fancyhdr Warning: \headheight is too small (60.0pt): 
-(fancyhdr)                Make it at least 86.4202pt, for example:
-(fancyhdr)                \setlength{\headheight}{86.4202pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-
-(fancyhdr)                \addtolength{\topmargin}{-26.4202pt}.
-
-[6]
-File: images/logotecnm.png Graphic file (type png)
-<use images/logotecnm.png>
-Package pdftex.def Info: images/logotecnm.png  used on input line 240.
-(pdftex.def)             Requested size: 226.80736pt x 28.45274pt.
-
-
-Package fancyhdr Warning: \headheight is too small (60.0pt): 
-(fancyhdr)                Make it at least 86.4202pt, for example:
-(fancyhdr)                \setlength{\headheight}{86.4202pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-
-(fancyhdr)                \addtolength{\topmargin}{-26.4202pt}.
-
-[7]
-Overfull \hbox (24.5397pt too wide) in paragraph at lines 242--259
- [] 
- []
-
-
-Package multicol Warning: Floats and marginpars not allowed inside `multicols' 
-environment!.
-
-
-Package multicol Warning: Floats and marginpars not allowed inside `multicols' 
-environment!.
-
-File: images/logotecnm.png Graphic file (type png)
-<use images/logotecnm.png>
-Package pdftex.def Info: images/logotecnm.png  used on input line 380.
-(pdftex.def)             Requested size: 226.80736pt x 28.45274pt.
-
-Package fancyhdr Warning: \headheight is too small (60.0pt): 
-(fancyhdr)                Make it at least 86.4202pt, for example:
-(fancyhdr)                \setlength{\headheight}{86.4202pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-
-(fancyhdr)                \addtolength{\topmargin}{-26.4202pt}.
-
-[8]
-Overfull \hbox (128.81828pt too wide) in paragraph at lines 400--401
-[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
- []
-
-
-Overfull \hbox (86.32866pt too wide) in paragraph at lines 401--402
-[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
- []
-
-
-Overfull \hbox (18.34732pt too wide) in paragraph at lines 427--428
-[][][][][][][][][][][][][][][][][][][][] 
- []
-
-
-Overfull \hbox (38.74252pt too wide) in paragraph at lines 429--430
-[][][][][][][][][][][][][][][][][][][][] 
- []
-
-
-Overfull \hbox (8.14972pt too wide) in paragraph at lines 431--432
-[][][][][][][][][][][][][][][][] 
- []
-
-
-Overfull \hbox (18.34732pt too wide) in paragraph at lines 459--460
-[][][][][][][][][][][][][] 
- []
-
-
-Overfull \hbox (13.24852pt too wide) in paragraph at lines 461--462
-[][][][][][][][][][][][][] 
- []
-
-
-Overfull \hbox (13.24852pt too wide) in paragraph at lines 464--465
-[][][][][][][][][][][][][][][][][][][][][][][][][][] 
- []
-
-
-Overfull \hbox (59.13773pt too wide) in paragraph at lines 465--466
-[][][][][][][][][][][][][] 
- []
-
-
-Overfull \hbox (54.03893pt too wide) in paragraph at lines 467--468
-[][][][][][][][][][][][][] 
- []
-
-
-Overfull \hbox (8.14972pt too wide) in paragraph at lines 500--501
-[][][][][][][][][][][][][][][][][] 
- []
-
-
-Overfull \hbox (8.14972pt too wide) in paragraph at lines 501--502
-[][][][][][][][][][][][][][][][][] 
- []
-
-
-Overfull \hbox (8.14972pt too wide) in paragraph at lines 502--503
-[][][][][][][][][][][][][][][][][] 
- []
-
-
-Overfull \hbox (3.05092pt too wide) in paragraph at lines 503--504
-[][][][][][][][][][][][][][][][][] 
- []
-
-File: images/logotecnm.png Graphic file (type png)
-<use images/logotecnm.png>
-Package pdftex.def Info: images/logotecnm.png  used on input line 509.
-(pdftex.def)             Requested size: 226.80736pt x 28.45274pt.
-
-Package fancyhdr Warning: \headheight is too small (60.0pt): 
-(fancyhdr)                Make it at least 86.4202pt, for example:
-(fancyhdr)                \setlength{\headheight}{86.4202pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-
-(fancyhdr)                \addtolength{\topmargin}{-26.4202pt}.
-
-[9]
-Overfull \hbox (54.03893pt too wide) in paragraph at lines 535--536
-[][][][][][][][][][][][][][][][][] 
- []
-
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 536.
-
-Overfull \hbox (64.23653pt too wide) in paragraph at lines 536--537
-[][][][][][][][][][][][][][][][][][][][][] 
- []
-
-
-Overfull \hbox (38.74252pt too wide) in paragraph at lines 564--565
-[][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
- []
-
-
-Overfull \hbox (38.74252pt too wide) in paragraph at lines 565--566
-[][][][][][][][][][][][][][][] 
- []
-
-
-Overfull \hbox (94.82933pt too wide) in paragraph at lines 566--567
-[][][][][][][][][][][][][][][][][][][][][][] 
- []
-
-
-Overfull \hbox (33.64372pt too wide) in paragraph at lines 567--568
-[][][][][][][][][][][][] 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 579--579
-|[]\T1/cmr/bx/n/17.28 Conclusiones y Re-co-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 586--587
-[]\T1/cmr/m/n/12 Retroalimentación vi-sual me-dian-te
- []
-
-)
-Overfull \vbox (68.32118pt too high) has occurred while \output is active []
-
-File: images/logotecnm.png Graphic file (type png)
-<use images/logotecnm.png>
-Package pdftex.def Info: images/logotecnm.png  used on input line 177.
-(pdftex.def)             Requested size: 226.80736pt x 28.45274pt.
-
-
-Package fancyhdr Warning: \headheight is too small (60.0pt): 
-(fancyhdr)                Make it at least 86.4202pt, for example:
-(fancyhdr)                \setlength{\headheight}{86.4202pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-
-(fancyhdr)                \addtolength{\topmargin}{-26.4202pt}.
-
-[10]
+{/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-ts1.enc}])
 File: images/logotecnm.png Graphic file (type png)
 <use images/logotecnm.png>
 Package pdftex.def Info: images/logotecnm.png  used on input line 179.
@@ -1321,13 +1065,7 @@ Package fancyhdr Warning: \headheight is too small (60.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-26.4202pt}.
 
-[11] (./main.bbl
-Underfull \hbox (badness 6608) in paragraph at lines 9--16
-\T1/cmtt/m/n/12 functions / advanced-[]io / tone/$[]\T1/cmr/m/n/12 , 2024.  Ava
-i-la-ble at []$\T1/cmtt/m/n/12 https : / / www . arduino . cc /
- []
-
-)
+[3] (./main.bbl)
 File: images/logotecnm.png Graphic file (type png)
 <use images/logotecnm.png>
 Package pdftex.def Info: images/logotecnm.png  used on input line 183.
@@ -1341,7 +1079,7 @@ Package fancyhdr Warning: \headheight is too small (60.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-26.4202pt}.
 
-[12
+[4
 
 ] 
 enddocument/afterlastpage: lastpage setting LastPage.
@@ -1354,33 +1092,28 @@ LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-22>
  ***********
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 2B286E00A8D6BE773662E64EE29E7909;6413.
+(rerunfilecheck)             Checksum: F7EF694E85D1E84D436DC53525888F6D;942.
  ) 
 Here is how much of TeX's memory you used:
- 32884 strings out of 474222
- 651635 string characters out of 5748733
- 2031975 words of memory out of 5000000
- 54371 multiletter control sequences out of 15000+600000
- 571954 words of font info for 63 fonts, out of 8000000 for 9000
+ 31815 strings out of 474222
+ 638054 string characters out of 5748733
+ 1942975 words of memory out of 5000000
+ 53591 multiletter control sequences out of 15000+600000
+ 570564 words of font info for 60 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 103i,20n,106p,845b,1724s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr
-/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/
-texlive/texmf-dist/fonts/type1/public/amsfonts/latxfont/lcircle1.pfb></usr/shar
-e/texmf/fonts/type1/public/cm-super/sfbx0800.pfb></usr/share/texmf/fonts/type1/
-public/cm-super/sfbx1095.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx
-1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx1440.pfb></usr/share
-/texmf/fonts/type1/public/cm-super/sfbx1728.pfb></usr/share/texmf/fonts/type1/p
-ublic/cm-super/sfrm0600.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm0
-800.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1095.pfb></usr/share/
-texmf/fonts/type1/public/cm-super/sfrm1200.pfb></usr/share/texmf/fonts/type1/pu
-blic/cm-super/sfrm1728.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfti12
-00.pfb></usr/share/texmf/fonts/type1/public/cm-super/sftt0800.pfb></usr/share/t
-exmf/fonts/type1/public/cm-super/sftt1200.pfb>
-Output written on main.pdf (12 pages, 557593 bytes).
+ 103i,19n,106p,845b,1121s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/share/texmf/fonts/type1/public/cm-super/sfbx0800.pfb></usr/share/texmf/
+fonts/type1/public/cm-super/sfbx1095.pfb></usr/share/texmf/fonts/type1/public/c
+m-super/sfbx1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx1440.pfb
+></usr/share/texmf/fonts/type1/public/cm-super/sfbx1728.pfb></usr/share/texmf/f
+onts/type1/public/cm-super/sfrm0800.pfb></usr/share/texmf/fonts/type1/public/cm
+-super/sfrm1095.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1200.pfb>
+</usr/share/texmf/fonts/type1/public/cm-super/sfrm1728.pfb></usr/share/texmf/fo
+nts/type1/public/cm-super/sfti1200.pfb>
+Output written on main.pdf (4 pages, 395562 bytes).
 PDF statistics:
- 697 PDF objects out of 1000 (max. 8388607)
- 639 compressed objects within 7 object streams
- 285 named destinations out of 1000 (max. 500000)
- 303 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 147 PDF objects out of 1000 (max. 8388607)
+ 113 compressed objects within 2 object streams
+ 15 named destinations out of 1000 (max. 500000)
+ 71 words of extra memory for PDF output out of 10000 (max. 10000000)
 
