@@ -1,0 +1,84 @@
+% explicaicon_codigo.tex
+
+% Configuración preliminar para ajustar el espacio
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+\begin{figure}[H]
+	\centering
+	\begin{lstlisting}[
+		language=C++,
+		basicstyle=\ttfamily\scriptsize,
+		numbers=left,
+		numberstyle=\tiny\color{gray},
+		backgroundcolor=\color{codeBackground},
+		commentstyle=\color{comentarios},
+		keywordstyle=\color{identificador},
+		stringstyle=\color{cadena},
+		emph={pinMode,digitalWrite,HIGH,LOW},
+		emphstyle={\color{blue}\bfseries},
+		frame=single,
+		frameround=tttt,
+		rulecolor=\color{arduinoBlue},
+		breaklines=true,   % Permite la ruptura de líneas largas
+		columns=fullflexible,
+		keepspaces=true,
+		basewidth=0.5em,
+		xleftmargin=5mm,   % Márgenes laterales ajustados
+		xrightmargin=0mm
+		]
+		
+void tetrisTheme() {
+	// Theme A
+	toneLed(659, 250);  // E5
+	if (shouldStopMelody) return;
+	toneLed(494, 125);  // B4
+	if (shouldStopMelody) return;
+	toneLed(523, 125);  // C5
+	if (shouldStopMelody) return;
+	toneLed(587, 250);  // D5
+	if (shouldStopMelody) return;
+	toneLed(523, 125);  // C5
+	if (shouldStopMelody) return;
+	toneLed(494, 125);  // B4
+	if (shouldStopMelody) return;
+	toneLed(440, 250);  // A4
+	if (shouldStopMelody) return;
+	toneLed(440, 125);  // A4
+	if (shouldStopMelody) return;
+	toneLed(523, 125);  // C5
+	if (shouldStopMelody) return;
+	toneLed(659, 250);  // E5
+	if (shouldStopMelody) return;
+	toneLed(587, 125);  // D5
+	if (shouldStopMelody) return;
+	toneLed(523, 125);  // C5
+	if (shouldStopMelody) return;
+	toneLed(494, 375);  // B4
+	if (shouldStopMelody) return;
+	toneLed(523, 125);  // C5
+	if (shouldStopMelody) return;
+	toneLed(587, 250);  // D5
+	if (shouldStopMelody) return;
+	toneLed(659, 250);  // E5
+	if (shouldStopMelody) return;
+	toneLed(523, 250);  // C5
+	if (shouldStopMelody) return;
+	toneLed(440, 250);  // A4
+	if (shouldStopMelody) return;
+	toneLed(440, 500);  // A4
+	if (shouldStopMelody) return;
+	
+	delay(250);  
+	if (shouldStopMelody) return;
+		
+		
+		
+	\end{lstlisting}
+	\caption{Función tetrisTheme() y condicionales}
+	\label{fig:codigo-led}
+\end{figure}
+El código de la figura 8 define la función tetrisTheme() que reproduce el tema de Tetris (Theme A) utilizando tonos y frecuencias específicos. Cada llamada a toneLed() reproduce una nota musical en el pin designado (tonePin) con una duración específica, representando una parte de la melodía.
+
+La función empieza reproduciendo una secuencia de notas con sus respectivas frecuencias y duraciones, como E5, B4, C5, y así sucesivamente. Después de cada nota, verifica si se ha activado shouldStopMelody, lo cual indica si la melodía debe detenerse y, de ser así, interrumpe la función.
+
+La melodía incluye una breve pausa de 250 ms al final para permitir un intervalo entre repeticiones, haciendo que el tema se sienta más fluido y dándole tiempo al usuario antes de la próxima iteración.

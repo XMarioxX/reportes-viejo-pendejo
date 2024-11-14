@@ -1,2 +1,10 @@
 \babel@toc {spanish}{}\relax 
 \contentsline {figure}{\numberline {1}{\ignorespaces Código de control de LED en Arduino}}{2}{figure.1}%
+\contentsline {figure}{\numberline {2}{\ignorespaces Variables globales y función setup}}{4}{figure.2}%
+\contentsline {figure}{\numberline {3}{\ignorespaces Función loop y condicionales}}{4}{figure.3}%
+\contentsline {figure}{\numberline {4}{\ignorespaces Condicionales}}{5}{figure.4}%
+\contentsline {figure}{\numberline {5}{\ignorespaces Condicionales}}{5}{figure.5}%
+\contentsline {figure}{\numberline {6}{\ignorespaces Condicionales}}{5}{figure.6}%
+\contentsline {figure}{\numberline {7}{\ignorespaces Funciones stopCurrentMelody() y toneLed()}}{6}{figure.7}%
+\contentsline {figure}{\numberline {8}{\ignorespaces Función tetrisTheme() y condicionales}}{7}{figure.8}%
+\contentsline {figure}{\numberline {9}{\ignorespaces Función tetrisTheme() y condicionales}}{7}{figure.9}%

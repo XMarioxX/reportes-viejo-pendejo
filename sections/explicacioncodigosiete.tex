@@ -1,0 +1,65 @@
+% explicaicon_codigo.tex
+
+% Configuración preliminar para ajustar el espacio
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+\begin{figure}[H]
+	\centering
+	\begin{lstlisting}[
+		language=C++,
+		basicstyle=\ttfamily\scriptsize,
+		numbers=left,
+		numberstyle=\tiny\color{gray},
+		backgroundcolor=\color{codeBackground},
+		commentstyle=\color{comentarios},
+		keywordstyle=\color{identificador},
+		stringstyle=\color{cadena},
+		emph={pinMode,digitalWrite,HIGH,LOW},
+		emphstyle={\color{blue}\bfseries},
+		frame=single,
+		frameround=tttt,
+		rulecolor=\color{arduinoBlue},
+		breaklines=true,   % Permite la ruptura de líneas largas
+		columns=fullflexible,
+		keepspaces=true,
+		basewidth=0.5em,
+		xleftmargin=5mm,   % Márgenes laterales ajustados
+		xrightmargin=0mm
+		]
+		
+	// Theme B
+	toneLed(494, 250);  // B4
+	if (shouldStopMelody) return;
+	toneLed(587, 250);  // D5
+	if (shouldStopMelody) return;
+	toneLed(659, 250);  // E5
+	if (shouldStopMelody) return;
+	toneLed(698, 250);  // F5
+	if (shouldStopMelody) return;
+	toneLed(659, 125);  // E5
+	if (shouldStopMelody) return;
+	toneLed(587, 125);  // D5
+	if (shouldStopMelody) return;
+	toneLed(523, 375);  // C5
+	if (shouldStopMelody) return;
+	toneLed(523, 125);  // C5
+	if (shouldStopMelody) return;
+	toneLed(587, 250);  // D5
+	if (shouldStopMelody) return;
+	toneLed(659, 250);  // E5
+	if (shouldStopMelody) return;
+	toneLed(523, 250);  // C5
+	if (shouldStopMelody) return;
+	toneLed(494, 250);  // B4
+	if (shouldStopMelody) return;
+	toneLed(440, 500);  // A4
+	
+	delay(500);  // Longer pause at the end
+	}
+\end{lstlisting}
+\caption{Función tetrisTheme() y condicionales}
+\label{fig:codigo-led}
+\end{figure}
+La figura 9 amplía la función tetrisTheme() en Arduino para incluir el "Theme B" de la melodía de Tetris. La función utiliza llamadas consecutivas a toneLed() para reproducir notas como B4, D5, E5, F5 y otras, cada una con una duración determinada. Después de cada nota, verifica la variable shouldStopMelody para ver si la reproducción debe detenerse; si es así, la función finaliza inmediatamente.
+
+Al final de "Theme B", se agrega una pausa más larga de 500 ms para crear un descanso perceptible antes de cualquier repetición o cambio en la reproducción. Esto permite un flujo más natural entre los temas y evita que la melodía se sienta apresurada.

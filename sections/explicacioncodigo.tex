@@ -1,0 +1,48 @@
+% explicaicon_codigo.tex
+
+% Configuración preliminar para ajustar el espacio
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+\section{Explicación del Código}
+
+\begin{figure}[H]
+	\centering
+	\begin{lstlisting}[
+		language=C++,
+		basicstyle=\ttfamily\scriptsize,
+		numbers=left,
+		numberstyle=\tiny\color{gray},
+		backgroundcolor=\color{codeBackground},
+		commentstyle=\color{comentarios},
+		keywordstyle=\color{identificador},
+		stringstyle=\color{cadena},
+		emph={pinMode,digitalWrite,HIGH,LOW},
+		emphstyle={\color{blue}\bfseries},
+		frame=single,
+		frameround=tttt,
+		rulecolor=\color{arduinoBlue},
+		breaklines=true,   % Permite la ruptura de líneas largas
+		columns=fullflexible,
+		keepspaces=true,
+		basewidth=0.5em,
+		xleftmargin=5mm,   % Márgenes laterales ajustados
+		xrightmargin=0mm
+		]
+int tonePin = 4;
+int ledMusic = 3;
+unsigned long lastToneTime = 0;
+bool isPlaying = false;
+volatile bool shouldStopMelody = false;
+
+void setup() {
+	for (int pin = 5; pin <= 13; pin++) {
+		pinMode(pin, INPUT);
+	}
+	pinMode(tonePin, OUTPUT);
+	pinMode(ledMusic, OUTPUT);
+}
+	\end{lstlisting}
+	\caption{Variables globales y función setup}
+	\label{fig:codigo-led}
+\end{figure}
+La figura 2 muestra la configuración para el pin 4 para emitir sonidos y el pin 3 para controlar un LED indicador de música. En la función setup(), establece los pines 5 a 13 como entradas y define los pines tonePin y ledMusic como salidas para controlar el sonido y el LED. Además, usa variables para llevar el control del tiempo de reproducción y permite detener la melodía si es necesario.

@@ -1,0 +1,65 @@
+% explicaicon_codigo.tex
+
+% Configuración preliminar para ajustar el espacio
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+\begin{figure}[H]
+	\centering
+	\begin{lstlisting}[
+		language=C++,
+		basicstyle=\ttfamily\scriptsize,
+		numbers=left,
+		numberstyle=\tiny\color{gray},
+		backgroundcolor=\color{codeBackground},
+		commentstyle=\color{comentarios},
+		keywordstyle=\color{identificador},
+		stringstyle=\color{cadena},
+		emph={pinMode,digitalWrite,HIGH,LOW},
+		emphstyle={\color{blue}\bfseries},
+		frame=single,
+		frameround=tttt,
+		rulecolor=\color{arduinoBlue},
+		breaklines=true,   % Permite la ruptura de líneas largas
+		columns=fullflexible,
+		keepspaces=true,
+		basewidth=0.5em,
+		xleftmargin=5mm,   % Márgenes laterales ajustados
+		xrightmargin=0mm
+		]
+if (digitalRead(11) == HIGH) {
+	stopCurrentMelody();
+	tone(tonePin, 330, 100);  // E4 (Mi)
+	anyKeyPressed = true;
+	lastToneTime = millis();
+}
+if (digitalRead(10) == HIGH) {
+	stopCurrentMelody();
+	tone(tonePin, 349, 100);  // F4 (Fa)
+	anyKeyPressed = true;
+	lastToneTime = millis();
+}
+if (digitalRead(9) == HIGH) {
+	stopCurrentMelody();
+	tone(tonePin, 392, 100);  // G4 (Sol)
+	anyKeyPressed = true;
+	lastToneTime = millis();
+}
+if (digitalRead(8) == HIGH) {
+	stopCurrentMelody();
+	tone(tonePin, 440, 100);  // A4 (La)
+	anyKeyPressed = true;
+	lastToneTime = millis();
+}
+if (digitalRead(7) == HIGH) {
+	stopCurrentMelody();
+	tone(tonePin, 494, 100);  // B4 (Si)
+	anyKeyPressed = true;
+	lastToneTime = millis();
+}
+	\end{lstlisting}
+	\caption{Condicionales}
+	\label{fig:codigo-led}
+\end{figure}
+La figura 4 amplía la funcionalidad del teclado de piano en el loop() de Arduino, permitiendo tocar más notas musicales.
+
+Para cada pin del 11 al 7, el programa revisa si está en HIGH (tecla presionada). Si es así, detiene cualquier melodía en curso (stopCurrentMelody()), reproduce una nota específica (Mi, Fa, Sol, La o Si) en el pin de tono (tonePin) con una frecuencia de entre 330 y 494 Hz durante 100 ms, marca que una tecla fue presionada (anyKeyPressed = true), y actualiza el tiempo en lastToneTime.

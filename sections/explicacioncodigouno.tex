@@ -1,0 +1,54 @@
+% explicaicon_codigo.tex
+
+% Configuración preliminar para ajustar el espacio
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+
+
+
+\begin{figure}[H]
+	\centering
+	\begin{lstlisting}[
+		language=C++,
+		basicstyle=\ttfamily\scriptsize,
+		numbers=left,
+		numberstyle=\tiny\color{gray},
+		backgroundcolor=\color{codeBackground},
+		commentstyle=\color{comentarios},
+		keywordstyle=\color{identificador},
+		stringstyle=\color{cadena},
+		emph={pinMode,digitalWrite,HIGH,LOW},
+		emphstyle={\color{blue}\bfseries},
+		frame=single,
+		frameround=tttt,
+		rulecolor=\color{arduinoBlue},
+		breaklines=true,   % Permite la ruptura de líneas largas
+		columns=fullflexible,
+		keepspaces=true,
+		basewidth=0.5em,
+		xleftmargin=5mm,   % Márgenes laterales ajustados
+		xrightmargin=0mm
+		]
+void loop() {
+	bool anyKeyPressed = false;
+	
+	// Piano keys functionality
+	if (digitalRead(13) == HIGH) {
+		stopCurrentMelody();
+		tone(tonePin, 262, 100);  // C4 (Do)
+		anyKeyPressed = true;
+		lastToneTime = millis();
+	}
+	if (digitalRead(12) == HIGH) {
+		stopCurrentMelody();
+		tone(tonePin, 294, 100);  //D4 (Re)
+		anyKeyPressed = true;
+		lastToneTime = millis();
+	}
+	\end{lstlisting}
+	\caption{Función loop y condicionales}
+	\label{fig:codigo-led}
+\end{figure}
+La figura 3  implementa la funcionalidad de un teclado de piano básico en el loop(). Define una variable anyKeyPressed para indicar si alguna tecla ha sido presionada.
+
+Si el pin 13 detecta una señal alta (HIGH), el programa detiene la melodía actual (con stopCurrentMelody()), reproduce la nota C4 (Do) en el pin de tono (tonePin) a 262 Hz durante 100 ms, marca anyKeyPressed como verdadero, y actualiza el tiempo de la última nota tocada (lastToneTime). Del mismo modo, si el pin 12 está en HIGH, detiene la melodía, reproduce la nota D4 (Re) a 294 Hz durante 100 ms, y actualiza las mismas variables.

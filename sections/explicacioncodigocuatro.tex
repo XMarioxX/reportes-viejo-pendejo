@@ -1,0 +1,45 @@
+% explicaicon_codigo.tex
+
+% Configuración preliminar para ajustar el espacio
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+\begin{figure}[H]
+	\centering
+	\begin{lstlisting}[
+		language=C++,
+		basicstyle=\ttfamily\scriptsize,
+		numbers=left,
+		numberstyle=\tiny\color{gray},
+		backgroundcolor=\color{codeBackground},
+		commentstyle=\color{comentarios},
+		keywordstyle=\color{identificador},
+		stringstyle=\color{cadena},
+		emph={pinMode,digitalWrite,HIGH,LOW},
+		emphstyle={\color{blue}\bfseries},
+		frame=single,
+		frameround=tttt,
+		rulecolor=\color{arduinoBlue},
+		breaklines=true,   % Permite la ruptura de líneas largas
+		columns=fullflexible,
+		keepspaces=true,
+		basewidth=0.5em,
+		xleftmargin=5mm,   % Márgenes laterales ajustados
+		xrightmargin=0mm
+		]
+
+	if (!anyKeyPressed && (millis() - lastToneTime > 100)) {
+		digitalWrite(ledMusic, LOW);
+		isPlaying = false;
+	}
+	
+	delay(10);  
+	}
+	
+		
+	\end{lstlisting}
+	\caption{Condicionales}
+	\label{fig:codigo-led}
+\end{figure}
+La figura 6 muestra el apagado del LED indicador de música si no se está presionando ninguna tecla y han pasado al menos 100 ms desde la última nota tocada.
+
+Primero, verifica si no hay teclas presionadas (!anyKeyPressed) y si el tiempo transcurrido desde la última nota (millis() - lastToneTime) supera los 100 ms. Si ambas condiciones se cumplen, apaga el LED (digitalWrite(ledMusic, LOW)) y marca que la música no está sonando (isPlaying = false). Finalmente, incluye un pequeño retraso de 10 ms para estabilizar el ciclo del loop().

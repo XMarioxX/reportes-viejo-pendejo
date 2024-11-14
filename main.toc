@@ -6,4 +6,5 @@
 \contentsline {subsection}{\numberline {1.4}Resistencias}{3}{subsection.1.4}%
 \contentsline {section}{\numberline {2}Consideraciones de Diseño}{3}{section.2}%
 \contentsline {section}{\numberline {3}Objetivo del Proyecto}{4}{section.3}%
-\contentsline {section}{Referencias}{5}{section.3}%
+\contentsline {section}{\numberline {4}Explicación del Código}{4}{section.4}%
+\contentsline {section}{Referencias}{9}{figure.9}%

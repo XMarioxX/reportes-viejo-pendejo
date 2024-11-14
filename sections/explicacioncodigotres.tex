@@ -1,0 +1,49 @@
+% explicaicon_codigo.tex
+
+% Configuración preliminar para ajustar el espacio
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+\begin{figure}[H]
+	\centering
+	\begin{lstlisting}[
+		language=C++,
+		basicstyle=\ttfamily\scriptsize,
+		numbers=left,
+		numberstyle=\tiny\color{gray},
+		backgroundcolor=\color{codeBackground},
+		commentstyle=\color{comentarios},
+		keywordstyle=\color{identificador},
+		stringstyle=\color{cadena},
+		emph={pinMode,digitalWrite,HIGH,LOW},
+		emphstyle={\color{blue}\bfseries},
+		frame=single,
+		frameround=tttt,
+		rulecolor=\color{arduinoBlue},
+		breaklines=true,   % Permite la ruptura de líneas largas
+		columns=fullflexible,
+		keepspaces=true,
+		basewidth=0.5em,
+		xleftmargin=5mm,   % Márgenes laterales ajustados
+		xrightmargin=0mm
+		]
+	if (digitalRead(6) == HIGH) {
+		stopCurrentMelody();
+		tone(tonePin, 523, 100);  // C5
+		anyKeyPressed = true;
+		lastToneTime = millis();
+	}
+	if (digitalRead(5) == HIGH) {
+		shouldStopMelody = false;
+		tetrisTheme();
+	}
+	
+	\end{lstlisting}
+	\caption{Condicionales}
+	\label{fig:codigo-led}
+\end{figure}
+La figura 5 completa el teclado de piano y agrega una función para tocar una melodía específica.
+
+Cuando el pin 6 está en HIGH, el programa detiene la melodía actual y reproduce la nota C5 (Do en una octava más alta) en el pin de tono (tonePin) a 523 Hz durante 100 ms. Marca que se ha presionado una tecla (anyKeyPressed = true) y actualiza el tiempo en lastToneTime.
+
+Si el pin 5 está en HIGH, el programa habilita la reproducción de la melodía de Tetris (shouldStopMelody = false) y llama a la función tetrisTheme() para iniciar la melodía.
+ 

@@ -1,0 +1,65 @@
+% explicaicon_codigo.tex
+
+% Configuración preliminar para ajustar el espacio
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+\begin{figure}[H]
+	\centering
+	\begin{lstlisting}[
+		language=C++,
+		basicstyle=\ttfamily\scriptsize,
+		numbers=left,
+		numberstyle=\tiny\color{gray},
+		backgroundcolor=\color{codeBackground},
+		commentstyle=\color{comentarios},
+		keywordstyle=\color{identificador},
+		stringstyle=\color{cadena},
+		emph={pinMode,digitalWrite,HIGH,LOW},
+		emphstyle={\color{blue}\bfseries},
+		frame=single,
+		frameround=tttt,
+		rulecolor=\color{arduinoBlue},
+		breaklines=true,   % Permite la ruptura de líneas largas
+		columns=fullflexible,
+		keepspaces=true,
+		basewidth=0.5em,
+		xleftmargin=5mm,   % Márgenes laterales ajustados
+		xrightmargin=0mm
+		]
+		
+void stopCurrentMelody() {
+	shouldStopMelody = true;
+	noTone(tonePin);
+	digitalWrite(ledMusic, LOW);
+}
+
+void toneLed(int frequency, int duration) {
+
+	if (shouldStopMelody) {
+		return;
+	}
+	
+
+	for (int pin = 6; pin <= 13; pin++) {
+		if (digitalRead(pin) == HIGH) {
+			shouldStopMelody = true;
+			return;
+		}
+	}
+	
+	digitalWrite(ledMusic, HIGH);
+	tone(tonePin, frequency, duration);
+	delay(duration);
+	digitalWrite(ledMusic, LOW);
+	delay(50);  
+}
+
+
+	
+\end{lstlisting}
+\caption{Funciones stopCurrentMelody() y toneLed()}
+\label{fig:codigo-led}
+\end{figure}
+La figura 7 enseña la definición dos funciones en Arduino para controlar la reproducción de una melodía y un LED indicador. La función stopCurrentMelody() detiene la melodía actual, marcando la variable shouldStopMelody como true para indicar que la reproducción debe detenerse. Además, apaga el tono en el pin de sonido (tonePin) y el LED asociado (ledMusic).
+
+La función toneLed(int frequency, int duration) reproduce un tono en el pin tonePin durante un tiempo específico. Si se ha indicado que la melodía debe detenerse (shouldStopMelody), la función termina sin hacer nada. Antes de iniciar el tono, también verifica si alguna tecla está presionada (pines del 6 al 13) y detiene la melodía si detecta que una tecla está activa. Al reproducir el tono, enciende el LED, mantiene el tono por el tiempo especificado, y luego apaga el LED. También incluye una breve pausa de 50 ms entre tonos para el parpadeo del LED.
